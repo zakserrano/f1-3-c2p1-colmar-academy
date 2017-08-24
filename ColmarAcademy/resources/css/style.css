@@ -1,0 +1,704 @@
+/* Designed by Isaac Serrano on 24/08/2017 */
+/* Project: Colmar Academy, capstone project of the Codecademy Pro Intensive course */
+
+/* FONTS */
+
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Alegreya Sans Regular'), local('AlegreyaSans-Regular'), url(https://fonts.gstatic.com/s/alegreyasans/v5/KYNzioYhDai7mTMnx_gDgp7fs_z8nuqHYC6tC8rLl5s.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Alegreya Sans Medium'), local('AlegreyaSans-Medium'), url(https://fonts.gstatic.com/s/alegreyasans/v5/11EDm-lum6tskJMBbdy9afDHhyC1TRD9sSvvqBBgc4w.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Alegreya Sans Bold'), local('AlegreyaSans-Bold'), url(https://fonts.gstatic.com/s/alegreyasans/v5/11EDm-lum6tskJMBbdy9aSFcOIMZuYN7K3FRrJkYYms.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+@font-face {
+  font-family: 'Alegreya Sans';
+  font-style: normal;
+  font-weight: 800;
+  src: local('Alegreya Sans ExtraBold'), local('AlegreyaSans-ExtraBold'), url(https://fonts.gstatic.com/s/alegreyasans/v5/11EDm-lum6tskJMBbdy9aSsPtzGU7XgmiOMpkvc57q4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215;
+}
+
+/* GENERAL (CLASSES) */
+
+html, body{
+  font-family: "Alegreya Sans";
+  font-size: 16px;
+  color: hsl(0, 0%, 25%);
+}
+h1{
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+h2{
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.1;
+}
+h3{
+  font-size: 1.25rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+p{
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+a{
+  text-decoration: none;
+  color: hsl(0, 0%, 20%);
+}
+
+.strip{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.strip_col{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.content{
+  display: flex;
+  width: 100%;
+  max-width: 1024px;
+}
+.content_col{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1024px;
+}
+
+.box{
+  display:flex;
+}
+.box_col{
+  display: flex;
+  flex-direction: column;
+}
+
+.box_65{
+  display: flex;
+  align-items: center;
+  min-width: 65%;
+  max-width: 65%;
+  min-height: 100%;
+}
+.box_60{
+  display: flex;
+  min-width: 60%;
+  max-width: 60%;
+  min-height: 100%;
+}
+.box_40{
+  display: flex;
+  min-width: 40%;
+  max-width: 40%;
+  min-height: 100%;
+}
+.box_35{
+  display: flex;
+  min-width: 35%;
+  max-width: 35%;
+  min-height: 100%;
+}
+
+.box_jumbo{
+  margin: 2rem 1.5rem;
+}
+.box_jumbo img{
+  width: 100%;
+  height: 100%;
+}
+.box_jumbo video{
+  width: 100%;
+  height: 100%;
+}
+
+.box_mini{
+  display: flex;
+  align-content: center;
+}
+.box_mini_jumbo{
+    margin: 1rem 1rem;
+}
+.box_mini_text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding-right: 2.5rem;
+
+}
+.box_mini img{
+  width: 100%;
+  height: 100%;
+}
+.box_mini p{
+  margin-top: 0.5rem;
+}
+.box_mini_jumbo .img_mobile{
+  display: none;
+}
+
+.box_grill{
+  display: flex;
+  justify-content: space-between;
+  margin: 0 4.5rem 1rem 4.5rem;
+}
+
+.button{
+  display: flex;
+  justify-content: center;
+}
+.quote{
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.more a{
+  color: hsl(219, 79%, 66%);
+}
+.more a:hover{
+  text-decoration: underline;
+}
+
+@media only screen and (max-width: 780px){
+
+  .box_65{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 360px;
+    max-width: 360px;
+    height: 100%;
+    min-height: 100%;
+  }
+  .box_60{
+    display: flex;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: auto;
+  }
+  .box_40{
+    display: flex;
+    min-width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: auto;
+  }
+  .box_35{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    height: 100%;
+    min-height: 100%;
+  }
+
+  .box_jumbo{
+    display: flex;
+    flex-direction: row;
+    min-width: 100%;
+    align-items: flex-start;
+    margin: 0rem 0rem;
+  }
+  .box_jumbo img{
+    width: auto;
+    max-height: auto;
+    border-left: 1px solid hsl(0, 0%, 90%);
+    border-right: 1px solid hsl(0, 0%, 90%);
+  }
+  .box_jumbo video{
+    width: 100%;
+    height: 100%;
+    border-left: 1px solid hsl(0, 0%, 100%);
+    border-right: 1px solid hsl(0, 0%, 100%);
+  }
+
+  .box_mini{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .box_mini_jumbo{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 10rem;
+    margin: 1rem 1rem;
+    overflow: hidden;
+  }
+  .box_mini_jumbo .img_desktop{
+    display: none;
+  }
+  .box_mini_jumbo .img_mobile{
+    display: flex;
+  }
+
+  .box_mini_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: auto 2rem;
+  }
+  .box_mini img{
+    width: auto;
+    height: 100%;
+
+    background-size: cover;
+
+  }
+  .box_mini p{
+    margin-top: 0.5rem;
+  }
+
+}
+
+/* SPECIFIC (IDs) */
+
+/* HEADER */
+
+/* Menu */
+
+#menu_strip{
+  height: 4rem;
+}
+#menu_content{
+  justify-content: space-between;
+  align-items: center;
+}
+
+#brand{
+  align-items: center;
+}
+#brand img{
+  margin-left: 1.5rem;
+  height: 2rem;
+}
+#brand p{
+  font-size: 1.5rem;
+}
+#brand span{
+  font-weight: bold;
+}
+
+#nav{
+  align-items: center;
+}
+#nav ul{
+  display: flex;
+  align-items: center;
+  list-style: none;
+}
+#nav ul li{
+  margin-right: 1rem;
+  padding: 0.5rem 0.5rem;
+}
+#nav ul li:hover{
+  background-color: hsl(0, 0%, 90%);
+  transition: all 200ms linear 50ms;
+}
+
+#nav_sign{
+  margin-right: 1.5rem;
+}
+
+#nav_mobile{
+  display: none;
+}
+
+@media only screen and (max-width: 680px){
+
+  #nav_mobile{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  #nav_mobile a{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: hsl(0, 100%, 100%);
+  }
+
+  #nav_mobile a:hover{
+    border: 1px solid hsl(0, 0%, 25%);
+    box-shadow: 0 0 15px hsl(0, 0%, 25%);
+  }
+
+  #menu_content{
+    display: none;
+  }
+}
+
+/* MAIN */
+
+/* Learn everyday */
+
+#learn_strip{
+  background-color: hsl(0, 0%, 90%);
+}
+#learn_content{
+  align-items: center;
+}
+
+#learn_40{
+  align-items: center;
+  height: 100%;
+}
+#learn_text{
+  padding-left: 1.5rem;
+  padding-right: 5rem;
+}
+#learn_text h1{
+  margin-bottom: 2rem;
+}
+#learn_text h3{
+  margin-bottom: 2rem;
+}
+#learn_button{
+  background-color: hsl(0, 0%, 25%);
+}
+#learn_button:hover{
+  background-color: hsl(219, 79%, 66%);
+  transition: all 250ms linear 100ms;
+}
+#learn_button a{
+  margin: 0.5rem auto;
+  color: white;
+}
+
+@media only screen and (max-width: 780px){
+  #learn_strip{
+    display: flex;
+    flex-direction: row;
+    background-color: hsl(0, 0%, 90%);
+
+  }
+  #learn_content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  #learn_60{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  #learn_60 img{
+    width: 100;
+    min-width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: auto;
+    max-height: auto;
+  }
+
+  #learn_40{
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+  #learn_text{
+    margin-top: 2rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+  }
+  #learn_text h1{
+    margin-bottom: 2rem;
+  }
+  #learn_text h3{
+    margin-bottom: 2rem;
+  }
+  #learn_button{
+    background-color: hsl(0, 0%, 25%);
+  }
+  #learn_button a{
+    margin: 0.5rem auto;
+    color: white;
+  }
+}
+
+/* Keep practicing */
+
+#keep_60{
+  flex-direction: column;
+}
+#keep_text{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+#keep_text h2{
+  margin-bottom: 1.5rem;
+}
+#keep_text .text{
+  margin-bottom: 1.5rem;
+}
+#keep_text .quote{
+  margin-bottom: 3rem;
+}
+
+#keep_40{
+  flex-direction: column;
+  border-left: 1px solid gainsboro;
+}
+#keep_info_1{
+  border-bottom: 1px solid gainsboro;
+}
+#keep_info_2{
+  border-top: 1px solid gainsboro;
+}
+#keep_info_3{
+  background-color: hsl(0, 0%, 90%);
+}
+
+@media only screen and (max-width: 780px){
+
+  #keep_content{
+    padding-bottom: 2rem;
+  }
+
+  #keep_60{
+    display: none;
+  }
+
+  #keep_40{
+    flex-direction: column;
+    align-items: center;
+    border-left: none;
+  }
+  #keep_info_1{
+    border-bottom: none;
+  }
+  #keep_info_2{
+    border-top: none;
+  }
+  #keep_info_3{
+    background-color: hsl(0, 0%, 100%);
+  }
+}
+
+/* Start learning */
+
+#start_strip{
+  background-color: hsl(0, 0%, 90%);
+}
+#start_content{
+  justify-content: center;
+}
+#start_content h2{
+  margin: 2rem auto;
+}
+#start_content img{
+  width: 100%;
+}
+
+#start_grill_2{
+  margin-bottom: 3rem;
+}
+#start_course{
+  width: 31.5%;
+  background-color: white;
+}
+#start_course div{
+  margin: 1rem 1rem 1.5rem 1rem;
+}
+#start_courses_margin{
+  margin: 0.5rem 0rem;
+}
+
+#start_mobile{
+  display: none;
+}
+
+@media only screen and (max-width: 780px){
+
+  #start_strip{
+    background-color: hsl(0, 0%, 100%);
+    border-top: 1px solid hsl(0, 0%, 90%);
+    border-bottom: 1px solid hsl(0, 0%, 90%);
+  }
+  #start_content{
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  #start_content h2{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  #start_mobile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  #start_mobile ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    width: 80%;
+
+  }
+  #start_mobile li{
+    font-size: 1.25rem;
+    font-weight: 500;
+    display: flex;
+    width: 100%;
+    margin-bottom: 0.5rem;
+    background-color: hsl(0, 0%, 90%);
+  }
+  #start_mobile a{
+    width: 100%;
+    padding-left: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+  }
+  #start_mobile li a:active{
+    background-color: hsl(0, 0%, 25%);
+    color: hsl(0, 100%, 100%);
+  }
+
+  #start_desktop{
+    display: none;
+  }
+
+}
+
+/* Thesis exhibit */
+
+#thesis_content{
+  padding-bottom: 2rem;
+}
+#thesis_content h2{
+  margin: 2rem auto;
+}
+#thesis_60{
+  flex-direction: column;
+}
+#thesis_jumbo{
+  margin: 0 1.5rem;
+}
+
+#thesis_text{
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+#thesis_text h3{
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+#thesis_text p{
+  margin-bottom: 1.5rem;
+}
+#thesis_text .text{
+  margin-bottom: 2rem;
+}
+#thesis_40{
+  flex-direction: column;
+}
+#thesis_project_1{
+  background-color: hsl(0, 0%, 90%);
+}
+
+@media only screen and (max-width: 780px){
+
+  #thesis_content{
+    padding-bottom: 0rem;
+  }
+  #thesis_content h2{
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+  }
+  #thesis_jumbo{
+    margin: 0 0 1.5rem 0;
+  }
+  #thesis_text{
+    display: none;
+  }
+  #thesis_40{
+    display: none;
+  }
+}
+
+/* FOOTER */
+
+/* Legal */
+
+#legal_strip{
+  border-top: 1px solid gainsboro;
+}
+#legal_content{
+  justify-content: space-between;
+  padding-bottom: 3rem;
+}
+#legal_content p{
+  font-size: .75rem;
+  margin: 1rem 1.5rem;
+}
+
+#legal_terms ul{
+  display: flex;
+  list-style: none;
+  margin: 1rem 1.5rem;
+}
+#legal_terms li{
+  font-size: 0.75rem;
+  margin-right: 0.75rem;
+}
+#legal_terms a:hover{
+  border-bottom: 5px solid hsl(0, 0%, 25%);
+}
+
+@media only screen and (max-width: 780px){
+
+  #legal_strip{
+    border-top: none;
+  }
+  #legal_content{
+    justify-content: space-between;
+    padding-bottom: 0rem;
+  }
+
+  #legal_content p{
+    margin-top: 1rem 1rem;
+  }
+  #legal_terms ul{
+    display: none;
+  }
+}
